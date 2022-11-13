@@ -1,0 +1,23 @@
+App As appinfo:
+    BackEnabled: =false
+    Formulas: |
+        =//FetchResult = ForAll( Table(ParseJSON(FetchXmlPCF1.output)), { count: Value(ThisRecord.count)});
+        //FetchResult = Table([{activityid : "id1", count: 10}, {activityid : "id2", count: 20}]);
+        /*val123 = {count: Value(ParseJSON("{ ""count"" 20 }").field)};
+        FetchResult = ForAll(
+            Table(ParseJSON("[ { ""id"": 1, ""count"": 10}, { ""id"": 2, ""count"": 20} ]")),
+            {
+                id: Value(ThisRecord.Value.id),
+                count: Text(ThisRecord.Value.count)
+            }
+        );*/
+        FetchResult = ForAll(
+                Table(ParseJSON(FetchXmlPCF1.output)),
+                {
+                    industrycode: Value(ThisRecord.Value.industrycode),
+                    industrycode_name: Text(ThisRecord.Value.industrycode_formatted),
+                    activityCount: Value(ThisRecord.Value.activity_count)
+                }
+            );
+    OnError: =
+

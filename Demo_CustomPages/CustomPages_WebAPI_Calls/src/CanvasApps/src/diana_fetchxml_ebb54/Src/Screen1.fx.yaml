@@ -1,0 +1,177 @@
+Screen1 As screen:
+    LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+
+    "txtEntityName As 'Text box'":
+        DisplayMode: =DisplayMode.Edit
+        Height: =32
+        Value: ="activitypointer"
+        Width: =320
+        X: =211
+        Y: =64
+        ZIndex: =1
+
+    Gallery3 As gallery.BrowseLayout_Vertical_TwoTextVariant_pcfCore:
+        BorderColor: =RGBA(166, 166, 166, 1)
+        DelayItemLoading: =true
+        FocusedBorderColor: =RGBA(0, 120, 212, 1)
+        FocusedBorderThickness: =2
+        Items: =FetchResult
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =48
+        X: =563
+        Y: =163
+        ZIndex: =1
+
+        Container1 As groupContainer.horizontalAutoLayoutContainer:
+            Height: =48
+            LayoutGap: =2
+            LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+            LayoutMode: =LayoutMode.Auto
+            Width: =Parent.Width
+            ZIndex: =4
+
+            Icon1 As icon.Bell:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                Color: =RGBA(184, 0, 0, 1)
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledColor: =RGBA(220, 220, 220, 1)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                Height: =32
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Icon: =Icon.HalfFilledCircle
+                PaddingBottom: =3
+                PaddingLeft: =3
+                PaddingRight: =3
+                PaddingTop: =3
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                PressedColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                Width: =32
+                ZIndex: =1
+
+            Subtitle1 As Label:
+                DisplayMode: =DisplayMode.Edit
+                FillPortions: =1
+                FontSize: =9
+                FontWeight: =FontWeight.Normal
+                Height: =37
+                LayoutMinHeight: =32
+                LayoutMinWidth: =320
+                OnSelect: =
+                TabIndex: =-1
+                Text: =ThisItem.industrycode_name
+                VerticalAlignment: =VerticalAlign.Top
+                Width: =
+                X: =
+                Y: =7
+                ZIndex: =2
+
+            Icon2 As icon.Add:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                Color: =RGBA(0, 120, 212, 1)
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledColor: =RGBA(220, 220, 220, 1)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                Height: =32
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Icon: =Icon.Note
+                PaddingBottom: =3
+                PaddingLeft: =3
+                PaddingRight: =3
+                PaddingTop: =3
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                PressedColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                Width: =32
+                ZIndex: =3
+
+            Title1 As Label:
+                DisplayMode: =DisplayMode.Edit
+                FillPortions: =1
+                FontSize: =12
+                FontWeight: =FontWeight.Bold
+                Height: =46
+                LayoutMinHeight: =32
+                LayoutMinWidth: =320
+                OnSelect: =
+                TabIndex: =-1
+                Text: =ThisItem.activityCount
+                VerticalAlignment: =VerticalAlign.Top
+                Width: =
+                X: =0
+                Y: =
+                ZIndex: =4
+
+    lblEntityName As Label:
+        DisplayMode: =DisplayMode.Edit
+        Height: =32
+        Text: ="EntityName"
+        Width: =227
+        X: =45
+        Y: =64
+        ZIndex: =2
+
+    "txtFetchXml As 'Text box'":
+        DisplayMode: =DisplayMode.Edit
+        Height: =417
+        Mode: ='''Microsoft.CoreControls.TextBox.Mode'''.Multiline
+        Placeholder: =
+        Value: |-
+            ="<fetch distinct='false' mapping='logical'  aggregate='true'>
+              <entity name='activitypointer' >  
+                <attribute name='activityid' alias='activity_count' aggregate='countcolumn' />
+                <link-entity name='account' from='accountid' to='regardingobjectid' >
+                  <attribute name='industrycode' alias='industrycode' groupby='true' />      
+                </link-entity>
+              </entity>
+            </fetch>"
+        Width: =486
+        X: =45
+        Y: =163
+        ZIndex: =3
+
+    lblFetchXml As Label:
+        DisplayMode: =DisplayMode.Edit
+        Height: =32
+        Text: ="FetchXml"
+        Width: =227
+        X: =45
+        Y: =111
+        ZIndex: =4
+
+    FetchXmlPCF1 As FetchXmlPCF:
+        DisplayMode: =DisplayMode.Edit
+        entityName: =txtEntityName.Value
+        fetchXml: =txtFetchXml.Value
+        Height: =37
+        Visible: =true
+        Width: =177
+        X: =45
+        Y: =625
+        ZIndex: =6
+
+    Label1 As Label:
+        DisplayMode: =DisplayMode.Edit
+        Height: =32
+        Text: =
+        Width: =320
+        X: =841
+        Y: =80
+        ZIndex: =7
+
+    Label2 As Label:
+        DisplayMode: =DisplayMode.Edit
+        Height: =32
+        Text: |-
+            ="Length:  " & CountRows(FetchResult)
+        Width: =320
+        X: =868
+        Y: =62
+        ZIndex: =8
+

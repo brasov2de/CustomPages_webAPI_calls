@@ -1,0 +1,16 @@
+{
+  "components": [
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "diana_Dianamics.FetchXmlPCFDynamicSchema",
+      "IdentifierType": 0
+    }
+  ],
+  "dataSources": {},
+  "instanceUrl": "https://dianamics.crm4.dynamics.com/",
+  "state": "Configured",
+  "webApiVersion": "v9.0"
+}
