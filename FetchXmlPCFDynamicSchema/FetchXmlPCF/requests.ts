@@ -34,7 +34,7 @@ export const fetchRecords = async (fetchXml: string, entityName: string, context
     catch(e){
         if(e instanceof Error){
             if(e.name === "PCFNonImplementedError"){
-                return [{"industrycode": 1, "industrycode_formatted": "Accounting", "activity_count": 10}];
+                return [{"industrycode": 1, "industrycode_formatted": "Accounting", "activity_count": 10, "industrycode_color": "#ee0000"}];
             }
         }
         throw e;
