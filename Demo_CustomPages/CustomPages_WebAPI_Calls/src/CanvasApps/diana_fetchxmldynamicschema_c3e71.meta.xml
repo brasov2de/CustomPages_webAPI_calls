@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Name>diana_fetchxmldynamicschema_c3e71</Name>
-  <AppVersion>2022-11-13T09:43:28Z</AppVersion>
+  <AppVersion>2022-11-13T17:02:29Z</AppVersion>
   <Status>Ready</Status>
   <CreatedByClientVersion>3.22105.21.0</CreatedByClientVersion>
   <MinClientVersion>3.22105.21.0</MinClientVersion>
-  <Tags>{"primaryDeviceWidth":"1745","primaryDeviceHeight":"765","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Tablet","publisherVersion":"3.22105.21","minimumRequiredApiVersion":"2.2.0","hasComponent":"false","hasUnlockedComponent":"false","isUnifiedRootApp":"false","sienaVersion":"20221113T092614Z-3.22105.21.0"}</Tags>
+  <Tags>{"primaryDeviceWidth":"1366","primaryDeviceHeight":"768","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Tablet","publisherVersion":"3.22105.21","minimumRequiredApiVersion":"2.2.0","hasComponent":"false","hasUnlockedComponent":"false","isUnifiedRootApp":"false","sienaVersion":"20221113T094328Z-3.22105.21.0"}</Tags>
   <IsCdsUpgraded>0</IsCdsUpgraded>
   <GalleryItemId xsi:nil="true"></GalleryItemId>
   <BackgroundColor>RGBA(0,176,240,1)</BackgroundColor>
