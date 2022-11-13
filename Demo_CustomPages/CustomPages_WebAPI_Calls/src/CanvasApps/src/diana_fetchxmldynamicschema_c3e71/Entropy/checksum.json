@@ -1,0 +1,36 @@
+{
+  "ClientBuildDetails": {
+    "CommitHash": "2fae9da01ab475b6532d8d034370feec6ed58df1",
+    "IsLocalBuild": false
+  },
+  "ClientPerFileChecksums": {
+    "AppCheckerResult.sarif": "C8_0beENSVjNVYAjZk6SMzBukrISrP8aoZ2v2Vr2eaes6E=",
+    "Controls\\1.json": "C8_DxuHHiPeyyuFhYCYipObPGR/XuUWE04niIJno/Jsb9k=",
+    "Controls\\3.json": "C8_6U1OYyNzL7L8ZsMRN1vrtbwBSaYbn0iMPVS+eB5A5h4=",
+    "Header.json": "C8_wWjblexdX5jMzfMJwARppEf3INJU96MW63XT3aqEeRI=",
+    "Properties.json": "C8_e745vTvAQpJ+vDvzTkycyNVKqcTqRUYDXo2rsMm6Q6E=",
+    "References\\DataSources.json": "C8_bSi7CkSh6KfufXvbOlZaORyh3OOl6Cloq0BniqsHfY0=",
+    "References\\NamedValues.json": "C8_5zKoi5LU1hnvnNjgS6HV5iPoc2iGOaW0XBtVPuVm2lE=",
+    "References\\Resources.json": "C8_s+se9qfOYnCKwfIt6gbv1FGBHW47JCt5d/CkUpqbcjk=",
+    "References\\Templates.json": "C8_Le0aCkvwYxLo8R6hT0RQ53TaADwzIw3O5e/h0MktyfA=",
+    "References\\Themes.json": "C8_3iaRXxnWrkN8kJH8dBQ4f3H/PGWcgdU3RI3nMwkVfWI=",
+    "Resources\\Controls\\Dianamics.FetchXmlPCFDynamicSchema.bundle.js": "C8_2t0sBMgopJZGUpjLRBdVztjKDHBaCayYFTx5+CTk5es=",
+    "Resources\\PublishInfo.json": "C8_sGqn/BQPS8dMg7cUt3ye20d2YB4Sqj+YhLbd32WMoXY="
+  },
+  "ClientStampedChecksum": "C8_ulIxBxYVi0ll2aK8+hdm7Dp+SVXlo0wJ0YSLHW9JciU=",
+  "ServerPerFileChecksums": {
+    "AppCheckerResult.sarif": "C8_0beENSVjNVYAjZk6SMzBukrISrP8aoZ2v2Vr2eaes6E=",
+    "Controls\\1.json": "C8_DxuHHiPeyyuFhYCYipObPGR/XuUWE04niIJno/Jsb9k=",
+    "Controls\\3.json": "C8_6U1OYyNzL7L8ZsMRN1vrtbwBSaYbn0iMPVS+eB5A5h4=",
+    "Header.json": "C8_wWjblexdX5jMzfMJwARppEf3INJU96MW63XT3aqEeRI=",
+    "Properties.json": "C8_e745vTvAQpJ+vDvzTkycyNVKqcTqRUYDXo2rsMm6Q6E=",
+    "References\\DataSources.json": "C8_bSi7CkSh6KfufXvbOlZaORyh3OOl6Cloq0BniqsHfY0=",
+    "References\\NamedValues.json": "C8_5zKoi5LU1hnvnNjgS6HV5iPoc2iGOaW0XBtVPuVm2lE=",
+    "References\\Resources.json": "C8_s+se9qfOYnCKwfIt6gbv1FGBHW47JCt5d/CkUpqbcjk=",
+    "References\\Templates.json": "C8_Le0aCkvwYxLo8R6hT0RQ53TaADwzIw3O5e/h0MktyfA=",
+    "References\\Themes.json": "C8_3iaRXxnWrkN8kJH8dBQ4f3H/PGWcgdU3RI3nMwkVfWI=",
+    "Resources\\Controls\\Dianamics.FetchXmlPCFDynamicSchema.bundle.js": "C8_2t0sBMgopJZGUpjLRBdVztjKDHBaCayYFTx5+CTk5es=",
+    "Resources\\PublishInfo.json": "C8_sGqn/BQPS8dMg7cUt3ye20d2YB4Sqj+YhLbd32WMoXY="
+  },
+  "ServerStampedChecksum": "C8_ulIxBxYVi0ll2aK8+hdm7Dp+SVXlo0wJ0YSLHW9JciU="
+}

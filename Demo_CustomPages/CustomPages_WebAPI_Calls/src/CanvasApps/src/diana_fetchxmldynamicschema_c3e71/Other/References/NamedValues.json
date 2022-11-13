@@ -1,0 +1,209 @@
+{
+  "NamedValues": [
+    {
+      "Kind": "Page",
+      "Name": "PageDatePicker",
+      "Value": "custompage:diana_pagedatepicker_bc224"
+    },
+    {
+      "Kind": "Page",
+      "Name": "Home Page",
+      "Value": "custompage:cat_homepage_8d348"
+    },
+    {
+      "Kind": "Page",
+      "Name": "Custom Page Template",
+      "Value": "custompage:cat_custompagetemplate_231d0"
+    },
+    {
+      "Kind": "Page",
+      "Name": "Resizable Text Area",
+      "Value": "custompage:cat_resizabletextarea_eb7d1"
+    },
+    {
+      "Kind": "Page",
+      "Name": "CustomPagesGridPage",
+      "Value": "custompage:diana_custompagesgridpage_ced4e"
+    },
+    {
+      "Kind": "Page",
+      "Name": "DeliveryCalendarPage1",
+      "Value": "custompage:diana_deliverycalendarpage1_567e2"
+    },
+    {
+      "Kind": "Page",
+      "Name": "Breadcrumb Page",
+      "Value": "custompage:cat_breadcrumbpage_8963e"
+    },
+    {
+      "Kind": "Page",
+      "Name": "HappynatorCustomPage",
+      "Value": "custompage:diana_happynatorcustompage_67462"
+    },
+    {
+      "Kind": "Page",
+      "Name": "Expand Menu",
+      "Value": "custompage:cat_expandmenu_e71c4"
+    },
+    {
+      "Kind": "Page",
+      "Name": "DeliveryCalendar_Sol_ConfigPage",
+      "Value": "custompage:diana_deliverycalendarsolconfigpage_cdad6"
+    },
+    {
+      "Kind": "Page",
+      "Name": "Tag Picker",
+      "Value": "custompage:cat_tagpicker_ca530"
+    },
+    {
+      "Kind": "Page",
+      "Name": "Nav Page",
+      "Value": "custompage:cat_navpage_18ad8"
+    },
+    {
+      "Kind": "Page",
+      "Name": "Calendar Page",
+      "Value": "custompage:cat_calendarpage_cb349"
+    },
+    {
+      "Kind": "Page",
+      "Name": "DemoPCFPage",
+      "Value": "custompage:diana_demopcfpage_fc291"
+    },
+    {
+      "Kind": "Page",
+      "Name": "Page3",
+      "Value": "custompage:diana_page3_819bc"
+    },
+    {
+      "Kind": "Page",
+      "Name": "HappynatorCustomPageSick",
+      "Value": "custompage:diana_happynatorcustompagesick_b4da8"
+    },
+    {
+      "Kind": "Page",
+      "Name": "CustomOpenedPage",
+      "Value": "custompage:diana_customopenedpage_38896"
+    },
+    {
+      "Kind": "Page",
+      "Name": "Pivot Page",
+      "Value": "custompage:cat_pivotpage_f0b2a"
+    },
+    {
+      "Kind": "Page",
+      "Name": "SidePaneCustomPage",
+      "Value": "custompage:diana_sidepanecustompage_d4eb4"
+    },
+    {
+      "Kind": "Page",
+      "Name": "ColorfulOptionsetGridPage",
+      "Value": "custompage:diana_colorfuloptionsetgridpage_d2005"
+    },
+    {
+      "Kind": "Page",
+      "Name": "PowerCATDetailsList",
+      "Value": "custompage:diana_powercatdetailslist_eb982"
+    },
+    {
+      "Kind": "Page",
+      "Name": "Icon Page",
+      "Value": "custompage:cat_iconpage_e2422"
+    },
+    {
+      "Kind": "Page",
+      "Name": "Auto Width Label Page",
+      "Value": "custompage:cat_autowidthlabel_53db5"
+    },
+    {
+      "Kind": "Page",
+      "Name": "Elevation Page",
+      "Value": "custompage:cat_elevationpage_28669"
+    },
+    {
+      "Kind": "Page",
+      "Name": "ContextMenu Page",
+      "Value": "custompage:cat_contextmenupage_7df18"
+    },
+    {
+      "Kind": "Page",
+      "Name": "Shimmer Page",
+      "Value": "custompage:cat_shimmerpage_9b5cd"
+    },
+    {
+      "Kind": "Page",
+      "Name": "ProgressIndicator Page",
+      "Value": "custompage:cat_progressindicatorpage_9ea28"
+    },
+    {
+      "Kind": "Page",
+      "Name": "ReplyPage",
+      "Value": "custompage:diana_replypage_11181"
+    },
+    {
+      "Kind": "Page",
+      "Name": "Keyboard shortcuts",
+      "Value": "custompage:cat_keyboardshortcuts_5ca22"
+    },
+    {
+      "Kind": "Page",
+      "Name": "DianamicsDialogPage",
+      "Value": "custompage:diana_dianamicsdialogpage_19356"
+    },
+    {
+      "Kind": "Page",
+      "Name": "Tag List",
+      "Value": "custompage:cat_taglist_6a134"
+    },
+    {
+      "Kind": "Page",
+      "Name": "Dialog Page",
+      "Value": "custompage:cat_dialogpanel_15d96"
+    },
+    {
+      "Kind": "Page",
+      "Name": "DataverseSearch",
+      "Value": "custompage:diana_dataversesearch_e460f"
+    },
+    {
+      "Kind": "Page",
+      "Name": "CustomPagesPCFPage",
+      "Value": "custompage:diana_custompagespcfpage_e9ab3"
+    },
+    {
+      "Kind": "Page",
+      "Name": "Command Bar Page",
+      "Value": "custompage:cat_creatorkitreferencepage_60a17"
+    },
+    {
+      "Kind": "Page",
+      "Name": "FetchXml",
+      "Value": "custompage:diana_fetchxml_ebb54"
+    },
+    {
+      "Kind": "Page",
+      "Name": "Page2",
+      "Value": "custompage:diana_page2_8ba8b"
+    },
+    {
+      "Kind": "Page",
+      "Name": "Spinner Page",
+      "Value": "custompage:cat_spinnerpage_39ec0"
+    },
+    {
+      "Kind": "Page",
+      "Name": "DetailsList Page",
+      "Value": "custompage:cat_detailslistbasicpage_07690"
+    },
+    {
+      "Kind": "Page",
+      "Name": "Panel Page",
+      "Value": "custompage:cat_detailslistbasicpage_46cc7"
+    },
+    {
+      "Kind": "Page",
+      "Name": "FetchXmlDynamicSchema",
+      "Value": "custompage:diana_fetchxmldynamicschema_c3e71"
+    }
+  ]
+}
