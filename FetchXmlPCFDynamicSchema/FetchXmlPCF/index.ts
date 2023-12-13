@@ -41,11 +41,11 @@ export class FetchXmlPCFDynamicSchema implements ComponentFramework.StandardCont
             && (context.parameters.fetchXml.raw != this.fetchXml || context.parameters.entityName.raw != this.entityName)){
             this.fetchXml = context.parameters.fetchXml?.raw ?? "";
             this.entityName = context.parameters.entityName?.raw ?? "";
-            fetchRecords(this.fetchXml, this.entityName, context).then((records) => {
-                this.response = records;
-                if(this.outputSchema == null){
-                    this.outputSchema = toJsonSchema(records);
-                }
+            fetchRecords(this.fetchXml, this.entityName, context, context.parameters.fallbackSchema.raw ?? "{}").then((records) => {
+                this.response = {Value: records};
+              //  if(this.outputSchema == null){
+                    this.outputSchema = toJsonSchema(this.response);
+//                }
                 this.notifyOutputChanged();
             });
         }

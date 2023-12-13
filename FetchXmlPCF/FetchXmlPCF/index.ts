@@ -40,7 +40,7 @@ export class FetchXmlPCF implements ComponentFramework.ReactControl<IInputs, IOu
             this.fetchXml = context.parameters.fetchXml?.raw ?? "";
             this.entityName = context.parameters.entityName?.raw ?? "";
             fetchRecords(this.fetchXml, this.entityName, context).then((records) => {
-                this.response = JSON.stringify(records);
+                this.response = records;
                 this.notifyOutputChanged();
             });
         }

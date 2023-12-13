@@ -1,7 +1,8 @@
 import { IInputs, IOutputs } from "./generated/ManifestTypes";
 import toJsonSchema = require("to-json-schema");
 import { execSearchRequest } from "./DataverseSearchRequest";
-import { runInThisContext } from "vm";
+import { getColumns } from "./DataverseSearchAutodetectColumns";
+
 
 export class DataverseSearchPCF implements ComponentFramework.StandardControl<IInputs, IOutputs> {
     
@@ -87,7 +88,9 @@ export class DataverseSearchPCF implements ComponentFramework.StandardControl<II
     public getOutputs(): IOutputs {
         return { 
             result: this.result ?? "", 
-            resultSchema : JSON.stringify(this.resultSchema)
+            resultSchema : JSON.stringify(this.resultSchema), 
+            columns: getColumns(), 
+            columnsSchema: JSON.stringify(toJsonSchema(getColumns()))
          };
     }
 
@@ -99,7 +102,8 @@ export class DataverseSearchPCF implements ComponentFramework.StandardControl<II
      */
     public async getOutputSchema(context: ComponentFramework.Context<IInputs>): Promise<any> {
         return Promise.resolve({
-            result: this.resultSchema
+            result: this.resultSchema, 
+            columns: toJsonSchema(getColumns())
         });
     }
 
