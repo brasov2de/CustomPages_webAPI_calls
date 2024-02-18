@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <manifest>
-  <control namespace="Dianamics" constructor="FetchXmlPCFDynamicSchema" version="0.0.17" display-name-key="FetchXmlPCFDynamicSchema" description-key="FetchXmlPCF Dynamic Schema description" control-type="standard" >
+  <control namespace="Dianamics" constructor="FetchXmlTimeEntry" version="0.0.6" display-name-key="FetchXmlTimeEntry" description-key="FetchXmlTimeEntry description" control-type="standard" >
     <!--external-service-usage node declares whether this 3rd party PCF control is using external service or not, if yes, this control will be considered as premium and please also add the external domain it is using.
     If it is not using any external service, please set the enabled="false" and DO NOT add any domain below. The "enabled" will be false by default.
     Example1:
@@ -18,33 +18,24 @@
       -->
     </external-service-usage>
     <!-- property node identifies a specific, configurable piece of data that the control expects from CDS -->
-    <property name="fetchXml" display-name-key="FetchXml" description-key="FetchXml to execute" of-type="SingleLine.Text" usage="bound" required="true" />
-    <property name="entityName" display-name-key="Entity Name" description-key="Entity Name" of-type="SingleLine.Text" usage="bound" required="true" />
-    <property name="output" display-name-key="Output" description-key="Output" of-type="Object" usage="output" required="false" />
-    <property name="outputSchema" display-name-key="OutputSchema" description-key="OutputSchema" of-type="SingleLine.Text" usage="bound" />
+   
+    <property name="dateFrom" display-name-key="dateFrom" description-key="dateFrom" of-type="DateAndTime.DateOnly" usage="bound" required="true" />     
+    <property name="timestamp" display-name-key="timestamp" description-key="timestamp" of-type="SingleLine.Text" usage="bound" /> 
+    <property name="result" display-name-key="Result" description-key="Result" of-type="Object" usage="output" required="false" />
+    <property name="resultSchema" display-name-key="resultSchema" description-key="resultSchema" of-type="SingleLine.Text" usage="bound" hidden="true" />
     <property-dependencies>      
-      <property-dependency input="outputSchema" output="output" required-for="schema" />
+      <property-dependency input="resultSchema" output="result" required-for="schema" />
     </property-dependencies>
-    <property name="fallbackSchema" display-name-key="SingleLine.TextFallbackSchema" description-key="FallbackSchema" of-type="SingleLine.Text" usage="input" />
-    <!--
-      Property node's of-type attribute can be of-type-group attribute.
-      Example:
-      <type-group name="numbers">
-        <type>Whole.None</type>
-        <type>Currency</type>
-        <type>FP</type>
-        <type>Decimal</type>
-      </type-group>
-      <property name="sampleProperty" display-name-key="Property_Display_Key" description-key="Property_Desc_Key" of-type-group="numbers" usage="bound" required="true" />
-    -->
+
     <resources>
       <code path="index.ts" order="1"/>
       <!-- UNCOMMENT TO ADD MORE RESOURCES
-      <css path="css/FetchXmlPCF.css" order="1" />
-      <resx path="strings/FetchXmlPCF.1033.resx" version="1.0.0" />
+      <css path="css/FetchXmlTimeEntry.css" order="1" />
+      <resx path="strings/FetchXmlTimeEntry.1033.resx" version="1.0.0" />
       -->
     </resources>
-    <feature-usage>      
+      <feature-usage>
+      <uses-feature name="Utility" required="true" />
       <uses-feature name="WebAPI" required="true" />
     </feature-usage>
     <!-- UNCOMMENT TO ENABLE THE SPECIFIED API
