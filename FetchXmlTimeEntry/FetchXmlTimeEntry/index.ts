@@ -9,6 +9,7 @@ export class FetchXmlTimeEntry implements ComponentFramework.StandardControl<IIn
 
     private timestamp : string |null;
    private dateFrom : string | null;
+   private dateTo : string | null;
     /**
      * Empty constructor.
      */
@@ -38,16 +39,20 @@ export class FetchXmlTimeEntry implements ComponentFramework.StandardControl<IIn
     public updateView(context: ComponentFramework.Context<IInputs>): void
     {
         if(!context.parameters.dateFrom?.raw) return;
-        if(context.parameters.dateFrom!.raw?.toISOString()  == this.dateFrom && context.parameters.timestamp!.raw == this.timestamp ) return;      
+        if(context.parameters.dateFrom!.raw?.toISOString()  == this.dateFrom && context.parameters.dateTo!.raw?.toISOString()  == this.dateTo && context.parameters.timestamp!.raw == this.timestamp ) return;      
         this.dateFrom = context.parameters.dateFrom!.raw.toISOString();  
+        this.dateTo = context.parameters.dateTo!.raw?.toISOString() ?? null;  
         this.timestamp = context.parameters.timestamp!.raw;
 
-        const dateTo = new Date(this.dateFrom);
-        dateTo.setDate(dateTo.getDate() + 7);
+        let dateTo = context.parameters.dateTo!.raw;
+        if(dateTo==null){
+               dateTo = new Date(this.dateFrom);
+               dateTo.setDate(dateTo.getDate() + 7);        
+        }
         makeRequests(context.parameters.dateFrom!.raw, dateTo, context).then((response : any) => {            
             this.response = {
-                timestamp: this.timestamp,
-                byDay: response.byDay                
+                ...response, 
+                timestamp: this.timestamp,                
             }            
             this.notifyOutputChanged();                
         })

@@ -4,6 +4,7 @@ export const responseDataSchema: JSONSchema4 = {
     type: 'object',
     properties: {       
         timestamp: { type: 'string' },
+        daysCount :  { type: 'number' },
         byDay: {
             type: 'array',
             items: {
@@ -17,7 +18,8 @@ export const responseDataSchema: JSONSchema4 = {
                     hours: { type: 'number' },
                     hours_formatted: { type: 'string' },
                     isCurrentMonth: { type: 'boolean' },
-                    isToday: { type: 'boolean' }
+                    isToday: { type: 'boolean' }, 
+                    index :  { type: 'number' }
                 }
             },
         }
@@ -28,6 +30,7 @@ const today = new Date();
 
 export const responseData = { 
     "timestamp": new Date().toISOString(),
+    "daysCount": 7,
     "byDay" : [
         {
             "date" : today,
@@ -38,6 +41,7 @@ export const responseData = {
             "hours": 2,
             "hours_formatted": " hrs",
             "isCurrentMonth": true, 
-            "isToday": false
+            "isToday": false, 
+            "index": 1
         }]       
 };
