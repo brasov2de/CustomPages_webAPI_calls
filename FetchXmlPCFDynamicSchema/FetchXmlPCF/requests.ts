@@ -1,7 +1,7 @@
 import { IInputs } from "./generated/ManifestTypes";
 
-export const fetchRecords = async (fetchXml: string, entityName: string, context: ComponentFramework.Context<IInputs>) => {  
-    let colors = new Map();
+export const fetchRecords = async (fetchXml: string, entityName: string, context: ComponentFramework.Context<IInputs>, fallbackSchema: string) => {  
+   /* let colors = new Map();
     try {
       const metadata = await context.utils.getEntityMetadata("account", ["industrycode"]);
       colors = new Map((metadata.Attributes.get("industrycode")?.attributeDescriptor.OptionSet ?? []).map((option: any) => {
@@ -9,7 +9,7 @@ export const fetchRecords = async (fetchXml: string, entityName: string, context
       }));
     } catch (e) {
       console.log(e);
-    }  
+    }  */
     try{    
         const res = await context.webAPI.retrieveMultipleRecords(entityName, "?fetchXml=" + fetchXml)
         const records = res.entities.map((entity: any) => {        
@@ -24,9 +24,9 @@ export const fetchRecords = async (fetchXml: string, entityName: string, context
                 }
                 return [key, value];
             });          
-            if (entity.industrycode != null) {
+          /*  if (entity.industrycode != null) {
                 entityEntries.push(["industrycode_color", colors.get(entity.industrycode.toString())]);
-              }
+              }*/
             return Object.fromEntries(entityEntries);
         });    
      return records;
@@ -34,7 +34,7 @@ export const fetchRecords = async (fetchXml: string, entityName: string, context
     catch(e){
         if(e instanceof Error){
             if(e.name === "PCFNonImplementedError"){
-                return [{"industrycode": 1, "industrycode_formatted": "Accounting", "activity_count": 10, "industrycode_color": "#ee0000"}];
+                return [JSON.parse(fallbackSchema)];
             }
         }
         throw e;

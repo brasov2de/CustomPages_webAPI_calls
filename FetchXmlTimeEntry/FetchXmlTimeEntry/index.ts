@@ -1,14 +1,15 @@
 import {IInputs, IOutputs} from "./generated/ManifestTypes";
-import { fetchRecords } from "./requests";
-import toJsonSchema = require("to-json-schema");
+import { makeRequests } from "./requests/AllRequests";
+import { responseDataSchema } from "./requests/resultSchema";
 
-export class FetchXmlPCFDynamicSchema implements ComponentFramework.StandardControl<IInputs, IOutputs> {
-    private notifyOutputChanged: () => void;
+export class FetchXmlTimeEntry implements ComponentFramework.StandardControl<IInputs, IOutputs> {
+
     private response : any;
-    private fetchXml: any;
-    private entityName: any;
-    private outputSchema ?: toJsonSchema.JSONSchema3or4;
+    private notifyOutputChanged: () => void;    
 
+    private timestamp : string |null;
+   private dateFrom : string | null;
+   private dateTo : string | null;
     /**
      * Empty constructor.
      */
@@ -37,18 +38,24 @@ export class FetchXmlPCFDynamicSchema implements ComponentFramework.StandardCont
      */
     public updateView(context: ComponentFramework.Context<IInputs>): void
     {
-        if(context.parameters.fetchXml.raw && context.parameters.entityName.raw 
-            && (context.parameters.fetchXml.raw != this.fetchXml || context.parameters.entityName.raw != this.entityName)){
-            this.fetchXml = context.parameters.fetchXml?.raw ?? "";
-            this.entityName = context.parameters.entityName?.raw ?? "";
-            fetchRecords(this.fetchXml, this.entityName, context, context.parameters.fallbackSchema.raw ?? "{}").then((records) => {
-                this.response = {Value: records};
-                if(this.outputSchema == null){
-                    this.outputSchema = toJsonSchema(this.response, {strings: {detectFormat: false}});
-                }
-                this.notifyOutputChanged();
-            });
+        if(!context.parameters.dateFrom?.raw) return;
+        if(context.parameters.dateFrom!.raw?.toISOString()  == this.dateFrom && context.parameters.dateTo!.raw?.toISOString()  == this.dateTo && context.parameters.timestamp!.raw == this.timestamp ) return;      
+        this.dateFrom = context.parameters.dateFrom!.raw.toISOString();  
+        this.dateTo = context.parameters.dateTo!.raw?.toISOString() ?? null;  
+        this.timestamp = context.parameters.timestamp!.raw;
+
+        let dateTo = context.parameters.dateTo!.raw;
+        if(dateTo==null){
+               dateTo = new Date(this.dateFrom);
+               dateTo.setDate(dateTo.getDate() + 7);        
         }
+        makeRequests(context.parameters.dateFrom!.raw, dateTo, context).then((response : any) => {            
+            this.response = {
+                ...response, 
+                timestamp: this.timestamp,                
+            }            
+            this.notifyOutputChanged();                
+        })
     }
 
     /**
@@ -57,10 +64,9 @@ export class FetchXmlPCFDynamicSchema implements ComponentFramework.StandardCont
      */
     public getOutputs(): IOutputs
     {
-        return { 
-            output: this.response, 
-            outputSchema : JSON.stringify(this.outputSchema)
-         };
+        return {
+            result: this.response
+        };
     }
 
         /**
@@ -68,9 +74,9 @@ export class FetchXmlPCFDynamicSchema implements ComponentFramework.StandardCont
      * @param context The entire property bag available to control via Context Object; It contains values as set up by the customizer mapped to names defined in the manifest, as well as utility functions
      * @returns an object schema based on nomenclature defined in manifest
      */
-         public async getOutputSchema(context: ComponentFramework.Context<IInputs>): Promise<any> {
+        public async getOutputSchema(context: ComponentFramework.Context<IInputs>): Promise<any> {
             return Promise.resolve({
-                output: this.outputSchema
+                result: responseDataSchema
             });
         }
 

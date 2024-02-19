@@ -11,7 +11,8 @@
       <external-service-usage enabled="false">
       </external-service-usage>
     -->
-    <external-service-usage enabled="false">
+    <external-service-usage enabled="true">
+      <domain>devmodulesqa.crm4.dynamics.com</domain>
       <!--UNCOMMENT TO ADD EXTERNAL DOMAINS
       <domain></domain>
       <domain></domain>
@@ -20,7 +21,7 @@
     <!-- property node identifies a specific, configurable piece of data that the control expects from CDS -->
     <property name="fetchXml" display-name-key="FetchXml" description-key="FetchXml to execute" of-type="SingleLine.Text" usage="bound" required="true" />
     <property name="entityName" display-name-key="Entity Name" description-key="Entity Name" of-type="SingleLine.Text" usage="bound" required="true" />
-    <property name="output" display-name-key="Output" description-key="Output" of-type="SingleLine.Text" usage="output" required="false" />
+    <property name="output" display-name-key="Output" description-key="Output" of-type="Object" usage="output" required="false" />
     <!--
       Property node's of-type attribute can be of-type-group attribute.
       Example:
